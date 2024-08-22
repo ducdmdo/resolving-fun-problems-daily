@@ -29,6 +29,13 @@
       - Hash map
       - Hash set
 # Array
+  ## Dynamic Programing
+  Dynamic programming has 2 properties
+  1. Overlapping subproblems which is repeated subproblems
+     - After you calculate one subproblem, you store it then when you meet it again => you can reuse the result, so don't need to re-calculate the same/repeated/duplicated subproblems so saving time
+     - Keep going-on if you meet a new sub-problems, then calculate and store it 
+  3. Optimal subproblems
+     - Each sub-problem need to be optimize, so you overral problem is optimized
   ## TwoPointer
   1. twoSum - two pointer technique - key concept reducing time complexity by turning nested loop to single loop;
      - Basically, using left-pointer and right-pointer
