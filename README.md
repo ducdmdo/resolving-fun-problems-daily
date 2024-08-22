@@ -30,12 +30,19 @@
       - Hash set
 
   ## Dynamic Programing
-  Dynamic programming has 2 properties
+  Dynamic programming - **top down recursive approach** - has 2 properties
   1. Overlapping subproblems which is repeated subproblems
+     - **Notes**: Top down recursive => you go backward from the right to the left (OR from top-down)
+     - First calculate the sub-problems
      - After you calculate one subproblem, you store (**memoization**) it then when you meet it again => you can reuse the result, so don't need to re-calculate the same/repeated/duplicated subproblems so saving time
      - Keep going-on if you meet a new sub-problems, then calculate and store it 
   3. Optimal subproblems
      - Each sub-problem need to be optimize, so you overral problem is optimized
+  Dynamic programming - iterative** bottom-up approach** - you go throught the iterative but don't need to memorize the previous result as storing result will cost memory/space
+     - **Notes**: bottom-up approach => you go from left to right, calculate/compute the simple sub-problems first
+     - First calculate the sub-problems
+     - Iterate throught the loop ( don't need to add the sub-problems in the loop as you already resolved it)
+     - Return the result out of the loop
   ## Array
   ## TwoPointer
   1. twoSum - two pointer technique - key concept reducing time complexity by turning nested loop to single loop;
