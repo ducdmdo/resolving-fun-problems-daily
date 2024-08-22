@@ -36,8 +36,9 @@
      - First calculate the sub-problems
      - After you calculate one subproblem, you store (**memoization**) it then when you meet it again => you can reuse the result, so don't need to re-calculate the same/repeated/duplicated subproblems so saving time
      - Keep going-on if you meet a new sub-problems, then calculate and store it 
-  3. Optimal subproblems
+  2. Optimal subproblems
      - Each sub-problem need to be optimize, so you overral problem is optimized
+       
   Dynamic programming - iterative** bottom-up approach** - you go throught the iterative but don't need to memorize the previous result as storing result will cost memory/space
      - **Notes**: bottom-up approach => you go from left to right, calculate/compute the simple sub-problems first
      - First calculate the sub-problems
