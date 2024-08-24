@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /***
  The function rotate modifies an array (nums) by rotating its elements to the right by k steps.
 
@@ -28,6 +29,15 @@ The function does not return anything; it modifies the input array (nums) in-pla
 
 
 Examples:
+=======
+
+/**
+ * 
+ * @param {
+ * } nums 
+ * @param {*} k 
+ * Examples:
+>>>>>>> 8e8113ae8a15968340b7284ba9e4488a088065bb
 
 Basic Example
 
@@ -64,6 +74,7 @@ k Larger Than Array Size
 let arr = [1, 2];
 rotate(arr, 3);
 // After rotation, arr should be [2, 1]
+<<<<<<< HEAD
 
 
 Note: Rotation should be performed in-place, meaning no additional array should be used. The function should implement this without using built-in array methods to perform the rotation.
@@ -91,3 +102,39 @@ rotate([]);
 rotate([5, 6, 7, 8], -1);
 rotate([2, 2, 2, 2], 2);
 rotate([1, 2], 3);
+=======
+ */
+
+
+const rotate = (nums, k) => {
+
+    let currentLength = nums.length-1;
+    let temp;
+
+    if (currentLength === 0) return [];
+
+    if (k === 0) return nums;
+    
+    //iterate throught the loop
+   for (let i = 0; i < currentLength; i ++) {
+    if (k > 0) {
+        temp = nums.pop();
+        nums.unshift(temp)
+        //console.log(temp)
+        k--;
+    }
+   }
+
+    //return a modified array
+    console.log(nums)
+    return nums
+}
+
+rotate([1, 2, 3, 4, 5],1);
+rotate([1, 2, 3],3); 
+rotate([4, 3, 2, 1],0);
+rotate([],1);
+rotate([5,6,7,8],-1);
+rotate([2,2,2,2],2);
+rotate([1,2],3);
+>>>>>>> 8e8113ae8a15968340b7284ba9e4488a088065bb

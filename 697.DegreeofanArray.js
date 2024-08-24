@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /***
 Given a non-empty array of non-negative integers nums, the degree of this array is defined as the maximum frequency of any one of its elements.
 
@@ -24,11 +25,14 @@ The degree is 3 because the element 2 is repeated 3 times.
 So [2,2,3,1,4,2] is the shortest subarray, therefore returning 6.
 */
 
+=======
+>>>>>>> 8e8113ae8a15968340b7284ba9e4488a088065bb
 /**
  * @param {number[]} nums
  * @return {number}
  */
 const findShortestSubArray = (nums) => {
+<<<<<<< HEAD
   let maxRepeatedTime = 0;
   let currentRepeatedTime = 0;
 
@@ -43,3 +47,28 @@ const findShortestSubArray = (nums) => {
   }
   return maxRepeatedTime;
 };
+=======
+    let maxLength = 0;
+    let currentLenght = 0;
+    let collection = {};
+
+    for (let i = 0; i < nums.length; i ++) {
+     console.log(nums[i]);
+
+     collection[nums[i]] = (collection[nums[i]] || 0 ) + 1;
+     console.log("collection[nums[i]]:" + collection[nums[i]]);
+     
+     //console.log("collection[nums[1]] || 0  + 1:" + (collection[nums[1]] || 0 ) + 1);
+      maxLength = Math.max(maxLength, collection[nums[i]]);
+      //console.log(maxLength);
+    }
+
+
+    //console.log(maxLength);
+    return maxLength;
+
+};
+
+//findShortestSubArray([1,2,2,3,1]);
+findShortestSubArray([1,2,2,3,1,4,2]);
+>>>>>>> 8e8113ae8a15968340b7284ba9e4488a088065bb
