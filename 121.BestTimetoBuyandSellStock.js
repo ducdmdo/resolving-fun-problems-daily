@@ -117,8 +117,35 @@ const quickMaxProfit = (prices) => {
   return maxResult;
 };
 
+/**
 quickMaxProfit([7, 1, 5, 3, 6, 4]);
 quickMaxProfit([1, 4, 2]);
 quickMaxProfit([7, 6, 4, 3, 1]);
 quickMaxProfit([3, 3]);
 quickMaxProfit([2, 1, 4]);
+**/
+
+const betterMaxProfit = (prices) => {
+  let maxResult = 0;
+  let buyPrice = prices[0];
+  let currentProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    currentProfit = prices[i] - buyPrice;
+    if (buyPrice > prices[i]) {
+      buyPrice = prices[i];
+    }
+
+    if (maxResult < currentProfit) {
+      maxResult = currentProfit;
+    }
+  }
+  console.log(maxResult);
+  return maxResult;
+};
+
+//betterMaxProfit([7, 1, 5, 3, 6, 4]);
+//betterMaxProfit([1, 4, 2]);
+//betterMaxProfit([7, 6, 4, 3, 1]);
+//betterMaxProfit([3, 3]);
+betterMaxProfit([2, 1, 4]);
