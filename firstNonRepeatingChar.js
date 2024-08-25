@@ -2,7 +2,6 @@
 const firstNonRepeatingChar = (myString) => {
     let storingMap = new Map();
     
-    //Saving into map table key and number of repeated time
     for (let i = 0; i < myString.length; i ++) {
         const tempChar = myString[i];
         storingMap.set(tempChar, (storingMap.get(tempChar) || 0) + 1);
@@ -20,5 +19,5 @@ const firstNonRepeatingChar = (myString) => {
 }
 
 
-firstNonRepeatingChar("aabbcde");
 firstNonRepeatingChar("aabbcc");
+firstNonRepeatingChar("aabbcde");
