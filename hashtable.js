@@ -37,6 +37,7 @@ class HashTable {
         }
       }
     }
+    return allKeys;
   }
 }
 
