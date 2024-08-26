@@ -19,6 +19,14 @@
       - Array      => Fix size
         - **array.push(i),** **array.pop(i) is costing O(1)** but **array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N)** (add new items as the very first items of the array) because you have to reindex the array
       - Linked List
+        - Single LinkedList
+          - reverse is the most complex (
+                - 1. Using tempNode to swap head and tail => tempNode is pointing to tail
+                - 2. Using nexNode and prevNode and move 3 of them together but keeping the connection
+                    - nextNode = tempNode.next
+                    - tempNode.next = prevNode
+                    - prevNode = tempNode
+                    - tempNode = nextNode
       - Stack
       - Queue
     - Non-linear Data Structure
