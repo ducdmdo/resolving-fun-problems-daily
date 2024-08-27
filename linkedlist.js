@@ -47,29 +47,21 @@ class LinkedList {
     this.length = 0;
   }
 
-  push(iValue) {
-    //create a new node object newNode
-    const newNode = new Node(iValue);
-
-    //if the list is empty (head is null) then both head and tail should point to the newNode
+  push(value) {
+    const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-    }
-
-    //if the list is not empty, set the next attribute of the current tail node to point to the newNode
-    //the update the tail pointer to point to the newNode
-    else if (this.head) {
+    } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-
-    //increase the length attribute by one
     this.length++;
     return this;
   }
+
   pop() {
-    if (!this.head) return undefined;
+    if (this.length === 0) return undefined;
     let temp = this.head;
     let pre = this.head;
     while (temp.next) {
@@ -85,28 +77,123 @@ class LinkedList {
     }
     return temp;
   }
+
+  unshift(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  shift() {
+    if (this.length === 0) return undefined;
+    let temp = this.head;
+    this.head = this.head.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    temp.next = null;
+    return temp;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    let temp = this.head;
+    for (let i = 0; i < index; i++) {
+      temp = temp.next;
+    }
+    return temp;
+  }
+
+  set(index, value) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return this.push(value);
+    if (index === 0) return this.unshift(value);
+
+    const newNode = new Node(value);
+    const temp = this.get(index - 1);
+    newNode.next = temp.next;
+    temp.next = newNode;
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const before = this.get(index - 1);
+    const temp = before.next;
+
+    before.next = temp.next;
+    temp.next = null;
+    this.length--;
+    return temp;
+  }
+  reverse() {
+    // Swap the head and tail pointers
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+
+    let nextNode = temp.next;
+    let prevNode = null;
+
+    //Iterate through the list, and for each node,
+    //Then set its next pointer to its previous node.
+    for (let index = 0; index < this.length; index++) {
+      nextNode = temp.next; //step 1
+      temp.next = prevNode; //step 2
+      prevNode = temp; //step 3
+      temp = nextNode; //step 4
+    }
+    return this;
+  }
 }
 
 let myLinkedList = new LinkedList(1);
-myLinkedList.makeEmpty();
-myLinkedList.push(1);
 myLinkedList.push(2);
+myLinkedList.push(3);
+myLinkedList.push(4);
 
-myLinkedList.getHead();
-myLinkedList.getTail();
-myLinkedList.getLength();
-console.log("\nLinked List:");
+console.log("LL before reverse():");
+myLinkedList.printList();
+
+myLinkedList.reverse();
+
+console.log("\nLL after reverse():");
 myLinkedList.printList();
 
 /*
     EXPECTED OUTPUT:
     ----------------
-    Head: 1
-    Tail: 2
-    Length: 2
-
-    Linked List:
+    LL before reverse():
     1
     2
+    3
+    4
+    
+    LL after reverse():
+    4
+    3
+    2
+    1
 
 */
