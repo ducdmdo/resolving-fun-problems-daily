@@ -31,6 +31,33 @@
  }
 
 
+mergeBetter(otherList) {
+    let otherHead = otherList.head;
+    let dummy = { value: 0, next: null };
+    let current = dummy;
+
+    while (this.head !== null && otherHead !== null) {
+        if (this.head.value < otherHead.value) {
+            current.next = this.head;
+            this.head = this.head.next;
+        } else {
+            current.next = otherHead;
+            otherHead = otherHead.next;
+        }
+        current = current.next;
+    }
+
+    if (this.head !== null) {
+        current.next = this.head;
+    } else {
+        current.next = otherHead;
+        this.tail = otherList.tail;
+    }
+
+    this.head = dummy.next;
+    this.length += otherList.length;
+}
+
   function mergeLists(a,b){
     let temp = new ListNode(0);
     let current = temp;
@@ -88,4 +115,7 @@ var mergeKLists = function(lists) {
     
 };
 
+
+
 mergeKLists([[1,4,5],[1,3,4],[2,6]]);
+
