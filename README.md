@@ -20,9 +20,16 @@
         - **array.push(i),** **array.pop(i) is costing O(1)** but **array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N)** (add new items as the very first items of the array) because you have to reindex the array
       - Linked List
         - Single LinkedList
-          - reverse is the most complex (
-                - 1. Using tempNode to swap head and tail => tempNode is pointing to tail
-                - 2. Using nexNode and prevNode and move 3 of them together but keeping the connection
+          - Deleting/addition a node at index position - quite a lot of edge cases
+          -     Let's create a new tempNode separately. Then point to the 'head' node
+          -     Let's create another 3 nodes - previousNode, currentNode, nextNode
+          -         Calculate the nextNode to the right position then
+          -         Use the nextNode to iterate through the linkedlist, until the nextNode points to Null
+          -         Then move along 3 nodes accordingly
+          - reverse is the basic and quite interesting - using 3 nodes moving
+          -     Swap head and tail - Use tempNode to swap head and tail
+          -     Create prevNode & nextNode
+          -     Move 3 nodes accordingly to reverse the linkedlist
                     - nextNode = tempNode.next
                     - tempNode.next = prevNode
                     - prevNode = tempNode
