@@ -21,9 +21,9 @@
       - Linked List
         - Single LinkedList
           - reverse is the basic and quite interesting - using 3 nodes moving
-                1. Swap head and tail - Use tempNode to swap head and tail
-                2. Create prevNode & nextNode
-                3. Move 3 nodes accordingly to reverse the linkedlist
+          -     Swap head and tail - Use tempNode to swap head and tail
+          -     Create prevNode & nextNode
+          -     Move 3 nodes accordingly to reverse the linkedlist
                     - nextNode = tempNode.next
                     - tempNode.next = prevNode
                     - prevNode = tempNode
