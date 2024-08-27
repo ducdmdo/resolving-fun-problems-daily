@@ -21,8 +21,7 @@
       - Linked List
         - Single LinkedList
           - Deleting/addition a node at index position - quite a lot of edge cases
-          -     Let's create a new tempNode separately
-          -     Then point to the 'head' node
+          -     Let's create a new tempNode separately. Then point to the 'head' node
           -     Let's create another 3 nodes - previousNode, currentNode, nextNode
           -         Calculate the nextNode to the right position then
           -         Use the nextNode to iterate through the linkedlist, until the nextNode points to Null
