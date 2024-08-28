@@ -25,9 +25,9 @@
           -     Removing an item from the beginning => cost us O(1); This is a place where Linked Lists are better than Arrays. Arrays are O(n) when removing the first item because of the reindexing that is required.
           -     Finding an item by index => cost us 0(N); You have to iterate through the Linked List until you get to the index you are looking for.
           - Getting node at **index position**
-          -     You need to iterate to the Nth position
+          -     You need to iterate to the Nth position; so it costs O(N)
           - Poping the tail node
-          -     You have to iterate throught the list until you get to the tail
+          -     You have to iterate throught the list until you get to the tail, so it costs O(N)
             
           - Deleting/addition a node **at index position** - quite a lot of edge cases
           -     Let's create a new tempNode separately (let tempNode = new ListNode(-Infinity)). Then point to the 'head' node
@@ -47,12 +47,14 @@
                     - tempNode = nextNode
       - Double LinkedList
       -     Getting node at **index position**
-      -         Taking the advantage of the double linkedlist
+      -         Taking the advantage of the double linkedlist; so it costs Log N
       -             Divide the linkedlist into half. linkedlist.length/2
       -             if the expected index < length/2
       -                 then you should only iterate in the first half
       -             if the expected index > length/2
       -                 then you should only iterate in the second half
+      -     Popping the tail node; as it is double linkedlist
+      -         Basically, you can directly pop from the tail, so it costs O(1)
       - Stack
       - Queue
     - Non-linear Data Structure
