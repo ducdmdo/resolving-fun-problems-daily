@@ -20,6 +20,11 @@
         - **array.push(i),** **array.pop(i) is costing O(1)** but **array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N)** (add new items as the very first items of the array) because you have to reindex the array
       - Linked List
         - Single LinkedList
+          - Big O
+          -     Removing an item from the tail end => cost us O(N); Because we have to start at the beginning of the Linked List an iterate through to the end.
+          -     Removing an item from the beginning => cost us O(1); This is a place where Linked Lists are better than Arrays. Arrays are O(n) when removing the first item because of the reindexing that is required.
+          -     Finding an item by index => cost us 0(N); You have to iterate through the Linked List until you get to the index you are looking for.
+            
           - Deleting/addition a node at index position - quite a lot of edge cases
           -     Let's create a new tempNode separately. Then point to the 'head' node
           -     Let's create another 3 nodes - previousNode, currentNode, nextNode
