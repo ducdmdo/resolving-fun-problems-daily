@@ -24,14 +24,18 @@
           -     Removing an item from the tail end => cost us O(N); Because we have to start at the beginning of the Linked List an iterate through to the end.
           -     Removing an item from the beginning => cost us O(1); This is a place where Linked Lists are better than Arrays. Arrays are O(n) when removing the first item because of the reindexing that is required.
           -     Finding an item by index => cost us 0(N); You have to iterate through the Linked List until you get to the index you are looking for.
+          - Getting node at **index position**
+          -     You need to iterate to the Nth position
             
-          - Deleting/addition a node at index position - quite a lot of edge cases
-          -     Let's create a new tempNode separately. Then point to the 'head' node
+          - Deleting/addition a node **at index position** - quite a lot of edge cases
+          -     Let's create a new tempNode separately (let tempNode = new ListNode(-Infinity)). Then point to the 'head' node
           -     Let's create another 3 nodes - previousNode, currentNode, nextNode
-          -         Calculate the nextNode to the right position then
+          -         Move the nextNode to the Nth position
+          -         Keep track of let removedNode = head; let prevNode = tempNode;
           -         Use the nextNode to iterate through the linkedlist, until the nextNode points to Null
-          -         Then move along 3 nodes accordingly
-          - reverse is the basic and quite interesting - using 3 nodes moving
+          -             Then move along 3 nodes accordingly
+          -         Then disconnect the 'removedNode'
+          - Reversing is the basic and quite interesting - using 3 nodes moving
           -     Swap head and tail - Use tempNode to swap head and tail
           -     Create prevNode & nextNode
           -     Move 3 nodes accordingly to reverse the linkedlist
@@ -39,6 +43,14 @@
                     - tempNode.next = prevNode
                     - prevNode = tempNode
                     - tempNode = nextNode
+      - Double LinkedList
+      -     Getting node at **index position**
+      -         Taking the advantage of the double linkedlist
+      -             Divide the linkedlist into half. linkedlist.length/2
+      -             if the expected index < length/2
+      -                 then you should only iterate in the first half
+      -             if the expected index > length/2
+      -                 then you should only iterate in the second half
       - Stack
       - Queue
     - Non-linear Data Structure
