@@ -26,6 +26,8 @@
           -     Finding an item by index => cost us 0(N); You have to iterate through the Linked List until you get to the index you are looking for.
           - Getting node at **index position**
           -     You need to iterate to the Nth position
+          - Poping the tail node
+          -     You have to iterate throught the list until you get to the tail
             
           - Deleting/addition a node **at index position** - quite a lot of edge cases
           -     Let's create a new tempNode separately (let tempNode = new ListNode(-Infinity)). Then point to the 'head' node
