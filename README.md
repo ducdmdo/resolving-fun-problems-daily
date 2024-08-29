@@ -59,7 +59,11 @@
       - Queue
     - Non-linear Data Structure
       - Trees
-      - 
+      -     Big O
+      -         A full, perfect and complete BST is actually a 'Divide and Conquer' approach
+      -         Inserting into a BST is typically O(Log N) (worse case O(N) when BST is a linkedlist)
+      -         Full, perfect and complete BST will benefit - lookup, insert, delete with O(log N)
+  
       - Graphs
     - Hash
       - Hash map
