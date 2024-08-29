@@ -65,6 +65,9 @@
       -         Full, perfect and complete BST will benefit - lookup, insert, delete with O(log N)
   
       - Graphs
+      -     Big O
+      -         Adding a Vertex (Node) in a Graph with an Adjacency List is O(1) as a vertex (node) is represented as a key in an object. Key lookup in an object is O(N)
+      -         Removing a vertex(Node) is O(K) as you have to remove all of the edges associated with the vertex you are removing
     - Hash
       - Hash map
       - Hash set
