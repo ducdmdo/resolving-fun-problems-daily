@@ -73,7 +73,7 @@
       - Hash set
   ## Recursion
   1. A base case that return an obvious result, so you should be return in your base case then you're able to exit of the stackoverflow
-  2. A recursive case is always is the smaller case with the original case
+  2. Return recursive cases appropriately. Note: recursive case always is the smaller case with the original case
   ## Dynamic Programing
   Dynamic programming - **top down recursive approach** - has 2 properties
   1. Overlapping subproblems which is repeated subproblems
