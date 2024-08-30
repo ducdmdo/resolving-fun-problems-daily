@@ -63,6 +63,18 @@
       -         A full, perfect and complete BST is actually a 'Divide and Conquer' approach
       -         Inserting into a BST is typically O(Log N) (worse case O(N) when BST is a linkedlist)
       -         Full, perfect and complete BST will benefit - lookup, insert, delete with O(log N)
+      -     Breadth First Search
+      -     Iterative approach - Use a 'queue' to temporary keep a node then shift that node and put into a 'array' to keep all nodes of the tree.
+        currentNode = this.root
+        queue.push(currentNode)
+        While (queue.length) {currentNode = queue.shift; resultsArray.push(currentNode); then if there is a left node then push into the queue; if there is a right node then push into the queue}
+      -     Depth First Search
+      -     PreOrder
+        Use recursion; visit/capture the root.Node then visit/**capture** the left and right nodes
+      -     PostOrder
+        Use recursion - Go throught all the node to very left node, **capture** the left node first
+      -    InOrder
+        Use recursion - Go to the parent node to the the left node then **capture** then go to the right node
   
       - Graphs
       -     Big O
