@@ -73,7 +73,7 @@
         Use recursion; visit/capture the root.Node then visit/**capture** the left and right nodes
       -     PostOrder
         Use recursion - Go throught all the node to very left node, **capture** the left node first
-      -    InOrder
+      -     InOrder
         Use recursion - Go to the parent node to the the left node then **capture** then go to the right node
   
       - Graphs
