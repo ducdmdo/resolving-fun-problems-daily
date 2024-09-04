@@ -22,6 +22,7 @@ function merge(array1, array2) {
   return combined;
 }
 
+
 function mergeSort(array) {
   if (array.length === 1) return array;
 

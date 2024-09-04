@@ -31,7 +31,7 @@
  }
 
 
-mergeBetter(otherList) {
+function mergeBetter(otherList) {
     let otherHead = otherList.head;
     let dummy = { value: 0, next: null };
     let current = dummy;
