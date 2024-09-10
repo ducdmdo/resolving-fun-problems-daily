@@ -10,16 +10,16 @@
 - O (N!)     => Try to find out all the permutations & combination for the given input sizes; so bad, can not even function
 
 # Data Structure
-- Primitive
+## Primitive
     - Integer
     - Characters
     - Boolean
-- Non-Primitive
-    - Linear Data Structure
-      - Array      => Fix size
+## Non-Primitive
+    ### Linear Data Structure
+      #### Array      => Fix size
         - **array.push(i),** **array.pop(i) is costing O(1)** but **array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N)** (add new items as the very first items of the array) because you have to reindex the array
-      - Linked List
-        - Single LinkedList
+      #### Linked List
+        ##### Single LinkedList
           - Big O
           -     Removing an item from the tail end => cost us O(N); Because we have to start at the beginning of the Linked List an iterate through to the end.
           -     Removing an item from the beginning => cost us O(1); This is a place where Linked Lists are better than Arrays. Arrays are O(n) when removing the first item because of the reindexing that is required.
@@ -45,7 +45,7 @@
                     - tempNode.next = prevNode
                     - prevNode = tempNode
                     - tempNode = nextNode
-      - Double LinkedList
+      #### Double LinkedList
       -     Getting node at **index position**
       -         Taking the advantage of the double linkedlist; so it costs Log N
       -             Divide the linkedlist into half. linkedlist.length/2
@@ -55,10 +55,10 @@
       -                 then you should only iterate in the second half
       -     Popping the tail node; as it is double linkedlist
       -         Basically, you can directly pop from the tail, so it costs O(1)
-      - Stack
-      - Queue
-    - Non-linear Data Structure
-      - Trees
+      #### Stack
+      #### Queue
+    ### Non-linear Data Structure
+      #### Trees
       -     Big O
       -         A full, perfect and complete BST is actually a 'Divide and Conquer' approach
       -         Inserting into a BST is typically O(Log N) (worse case O(N) when BST is a linkedlist)
@@ -76,13 +76,13 @@
       -     InOrder
         Use recursion - Go to the parent node to the the left node then **capture** then go to the right node
   
-      - Graphs
+      #### Graphs
       -     Big O
       -         Adding a Vertex (Node) in a Graph with an Adjacency List is O(1) as a vertex (node) is represented as a key in an object. Key lookup in an object is O(N)
       -         Removing a vertex(Node) is O(K) as you have to remove all of the edges associated with the vertex you are removing
-    - Hash
-      - Hash map
-      - Hash set
+    #### Hash
+      #### Hash map
+      #### Hash set
   ## Recursion
   1. Return an obvious result for the base case, then you're able to exit of the stackoverflow
   2. Return recursive cases appropriately. Note: recursive case always is the smaller case with the original case
@@ -102,12 +102,12 @@
      - Iterate throught the loop ( don't need to add the sub-problems in the loop as you already resolved it)
      - Return the result out of the loop
   ## Array
-  ## TwoPointer
+  ### TwoPointer
   1. twoSum - two pointer technique - key concept reducing time complexity by turning nested loop to single loop;
      - Basically, using left-pointer and right-pointer
      - Move left-pointer to the right IF sum (left-pointer + right-pointer) > target
      - Move right-pointer to the left IF sum (left-pointer + right-pointer) < target
-  ## Greedy Approach
+  ### Greedy Approach
   2. Best time to buy and sell stock
      - Keep tracking the minimum buying prices for entire array
      - then move the pointer to the next position, then calculate if you can make maximum profit
