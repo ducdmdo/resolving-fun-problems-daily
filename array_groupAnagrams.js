@@ -23,7 +23,7 @@ const groupAnagrams = (myArray) => {
     
     //group anagram into an array
     console.log(storingMap.values());
-    return Array.from(storingMap.values());
+    return [...storingMap.values()];
 }
 
 

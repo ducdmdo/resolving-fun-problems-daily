@@ -16,7 +16,7 @@ function merge(array1, array2) {
     i++;
   }
   while (j < array2.length) {
-    combined.push(array2[i]);
+    combined.push(array2[j]);
     j++;
   }
   return combined;
@@ -24,9 +24,12 @@ function merge(array1, array2) {
 
 
 function mergeSort(array) {
+  //base case
   if (array.length === 1) return array;
 
   let midIndex =  Math.floor(array.length / 2);
+
+  //recursive case
   let left = mergeSort(array.slice(0, midIndex));
   let right = mergeSort(array.slice(midIndex));
 
@@ -35,4 +38,5 @@ function mergeSort(array) {
 
 let originalArray = [3, 1, 4, 2];
 
-mergeSort(originalArray);
+let sortedArray = mergeSort(originalArray);
+console.log(sortedArray);
