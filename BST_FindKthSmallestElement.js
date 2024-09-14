@@ -39,16 +39,28 @@ var kthSmallest = function(root, k) {
     return result;
 };
 
-const root = new TreeNode(3);
+/**
+ * 
+ const root = new TreeNode(3);
 root.left = new TreeNode(1)
 root.right = new TreeNode(4)
 root.left.righ = new TreeNode(2);
+ */
+
 
 //Input: Input: root = [3,1,4,null,2], k = 1
 //Output: 1
-console.log(kthSmallest(root,1));
-kthSmallest(root,1);
+//console.log(kthSmallest(root,1));
+//kthSmallest(root,1);
 
+const root = new TreeNode(5);
+root.left = new TreeNode(3)
+root.right = new TreeNode(6)
+root.left.left = new TreeNode(2);
+root.left.right = new TreeNode(4);
+root.left.left.left = new TreeNode(1);
+
+console.log(kthSmallest(root,3));
 
 //Input: root = [5,3,6,2,4,null,null,1], k = 3
 //Output: 3
