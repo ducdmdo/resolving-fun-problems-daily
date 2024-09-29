@@ -71,7 +71,7 @@ class BST {
         // use result array to hold value from the node
         let results = [];
 
-        //keep the currentNode in queue
+        //keep the currentNode in queue;
         queue.push(currentNode);
 
         while(queue.length) {
