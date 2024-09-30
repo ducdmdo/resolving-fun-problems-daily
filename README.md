@@ -57,7 +57,9 @@
               Basically, you can directly pop from the tail, so it costs O(1)
 #### Stack
 #### Queue
+
 ### Non-linear Data Structure
+#### Binary Heaps
 #### Trees
       Big O
       A full, perfect and complete BST is actually a 'Divide and Conquer' approach
