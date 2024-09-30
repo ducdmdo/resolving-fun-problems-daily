@@ -15,78 +15,81 @@
     - Characters
     - Boolean
 ## Non-Primitive
-    ### Linear Data Structure
-      #### Array      => Fix size
-        - **array.push(i),** **array.pop(i) is costing O(1)** but **array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N)** (add new items as the very first items of the array) because you have to reindex the array
-      #### Linked List
-        ##### Single LinkedList
-          - Big O
-          -     Removing an item from the tail end => cost us O(N); Because we have to start at the beginning of the Linked List an iterate through to the end.
-          -     Removing an item from the beginning => cost us O(1); This is a place where Linked Lists are better than Arrays. Arrays are O(n) when removing the first item because of the reindexing that is required.
-          -     Finding an item by index => cost us 0(N); You have to iterate through the Linked List until you get to the index you are looking for.
-          - Getting node at **index position**
-          -     You need to iterate to the Nth position; so it costs O(N)
-          - Poping the tail node
-          -     You have to iterate throught the list until you get to the tail, so it costs O(N)
+ ### Linear Data Structure
+ #### Array (Fix size)
+      array.push(i),** **array.pop(i) is costing O(1)** but **array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N)** (add new items as the very first items of the array) because you have to reindex the array
+#### Linked List
+##### Single LinkedList
+          **Big O**
+          - Removing an item from the tail end => cost us O(N); Because we have to start at the beginning of the Linked List an iterate through to the end.
+          
+          - Removing an item from the beginning => cost us O(1); This is a place where Linked Lists are better than Arrays. Arrays are O(n) when removing the first item because of the reindexing that is required.
+          
+          - Finding an item by index => cost us 0(N); You have to iterate through the Linked List until you get to the index you are looking for.
+          - Getting node at _index position_ => You need to iterate to the Nth position; so it costs O(N)
+          Poping the tail node => You have to iterate throught the list until you get to the tail, so it costs O(N)
             
           - Deleting/addition a node **at index position** - quite a lot of edge cases
-          -     Let's create a new tempNode separately (let tempNode = new ListNode(-Infinity)). Then point to the 'head' node
-          -     Let's create another 3 nodes - previousNode, currentNode, nextNode
-          -         Move the nextNode to the Nth position
-          -         Keep track of let removedNode = head; let prevNode = tempNode;
-          -         Use the nextNode to iterate through the linkedlist, until the nextNode points to Null
-          -             Then move along 3 nodes accordingly
-          -         Then disconnect the 'removedNode'
+              Let's create a new tempNode separately (let tempNode = new ListNode(-Infinity)). Then point to the 'head' node
+              Let's create another 3 nodes - previousNode, currentNode, nextNode
+              Move the nextNode to the Nth position
+              Keep track of let removedNode = head; let prevNode = tempNode;
+              Use the nextNode to iterate through the linkedlist, until the nextNode points to Null
+              Then move along 3 nodes accordingly
+              Then disconnect the 'removedNode'
           - Reversing is the basic and quite interesting - using 3 nodes moving
-          -     Swap head and tail - Use tempNode to swap head and tail
-          -     Create prevNode & nextNode
-          -     Move 3 nodes accordingly to reverse the linkedlist
-                    - nextNode = tempNode.next
-                    - tempNode.next = prevNode
-                    - prevNode = tempNode
-                    - tempNode = nextNode
-      #### Double LinkedList
+              Swap head and tail - Use tempNode to swap head and tail
+              Create prevNode & nextNode
+              Move 3 nodes accordingly to reverse the linkedlist
+                        - nextNode = tempNode.next
+                        - tempNode.next = prevNode
+                        - prevNode = tempNode
+                        - tempNode = nextNode
+##### Double LinkedList
       -     Getting node at **index position**
-      -         Taking the advantage of the double linkedlist; so it costs Log N
-      -             Divide the linkedlist into half. linkedlist.length/2
-      -             if the expected index < length/2
-      -                 then you should only iterate in the first half
-      -             if the expected index > length/2
-      -                 then you should only iterate in the second half
-      -     Popping the tail node; as it is double linkedlist
-      -         Basically, you can directly pop from the tail, so it costs O(1)
-      #### Stack
-      #### Queue
-    ### Non-linear Data Structure
-      #### Trees
+          Taking the advantage of the double linkedlist; so it costs Log N
+                Divide the linkedlist into half. linkedlist.length/2
+                  if the expected index < length/2
+                   then you should only iterate in the first half
+                      if the expected index > length/2
+                         then you should only iterate in the second half
+              Popping the tail node; as it is double linkedlist
+              Basically, you can directly pop from the tail, so it costs O(1)
+#### Stack
+#### Queue
+### Non-linear Data Structure
+#### Trees
+      Big O
+      A full, perfect and complete BST is actually a 'Divide and Conquer' approach
+      Inserting into a BST is typically O(Log N) (worse case O(N) when BST is a linkedlist)
+      Full, perfect and complete BST will benefit - lookup, insert, delete with O(log N)
+         
+      Breadth First Search
+          Iterative approach - Use a 'queue' to temporary keep a node then shift that node and put into a 'array' to keep all nodes of the tree.
+            currentNode = this.root
+            queue.push(currentNode)
+            While (queue.length) 
+                {currentNode = queue.shift; 
+                resultsArray.push(currentNode); 
+                then if there is a left node then **push** into the queue; if there is a right node then push into the queue}
+      Depth First Search
+          PreOrder
+            Use recursion; visit/capture the root.Node then visit/**capture** the left and right nodes
+          PostOrder
+            Use recursion - Go throught all the node to very left node, **capture** the left node first
+          InOrder
+            Use recursion - Go to the parent node to the the left node then **capture** then go to the right node
+#### Graphs
       -     Big O
-      -         A full, perfect and complete BST is actually a 'Divide and Conquer' approach
-      -         Inserting into a BST is typically O(Log N) (worse case O(N) when BST is a linkedlist)
-      -         Full, perfect and complete BST will benefit - lookup, insert, delete with O(log N)
-      -     Breadth First Search
-      -     Iterative approach - Use a 'queue' to temporary keep a node then shift that node and put into a 'array' to keep all nodes of the tree.
-        currentNode = this.root
-        queue.push(currentNode)
-        While (queue.length) {currentNode = queue.shift; resultsArray.push(currentNode); then if there is a left node then push into the queue; if there is a right node then push into the queue}
-      -     Depth First Search
-      -     PreOrder
-        Use recursion; visit/capture the root.Node then visit/**capture** the left and right nodes
-      -     PostOrder
-        Use recursion - Go throught all the node to very left node, **capture** the left node first
-      -     InOrder
-        Use recursion - Go to the parent node to the the left node then **capture** then go to the right node
-  
-      #### Graphs
-      -     Big O
-      -         Adding a Vertex (Node) in a Graph with an Adjacency List is O(1) as a vertex (node) is represented as a key in an object. Key lookup in an object is O(N)
-      -         Removing a vertex(Node) is O(K) as you have to remove all of the edges associated with the vertex you are removing
-    #### Hash
-      #### Hash map
-      #### Hash set
-  ## Recursion
+          Adding a Vertex (Node) in a Graph with an Adjacency List is O(1) as a vertex (node) is represented as a key in an object. Key lookup in an object is O(N)
+          Removing a vertex(Node) is O(K) as you have to remove all of the edges associated with the vertex you are removing
+#### Hash
+#### Hash map
+#### Hash set
+## Recursion
   1. Return an obvious result for the base case, then you're able to exit of the stackoverflow
   2. Return recursive cases appropriately. Note: recursive case always is the smaller case with the original case
-  ## Dynamic Programing
+## Dynamic Programing
   Dynamic programming - **top down recursive approach** - has 2 properties
   1. Overlapping subproblems which is repeated subproblems
      - **Notes**: Top down recursive => you go backward from the right to the left (OR from top-down)
