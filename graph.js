@@ -67,6 +67,29 @@ class Graph {
         return this;
     }
 
+
+    depthFirstIterative(start){
+        const stack = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+
+        visited[start] = true;
+        while(stack.length){
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+               if(!visited[neighbor]){
+                   visited[neighbor] = true;
+                   stack.push(neighbor)
+               } 
+            });
+        }
+        console.log(result);
+        return result;
+    }
+
     breadthFirst(startNode){
         const queue = [startNode];
         const result = [];
@@ -115,6 +138,7 @@ class Graph {
         return result;
 
     }
+
 }
 
 let g = new Graph();
@@ -149,3 +173,4 @@ g.addEdge("E","F");
 
 g.breadthFirst("A");
 g.breadthFirstQueue("A");
+g.depthFirstIterative("A");
