@@ -38,6 +38,26 @@ class Heap {
         }
 
     }
+    insertBubbleUp(value){
+        this.#heap.push(value);
+
+        let currentIdex = this.#heap.length-1;
+        let currentValue = this.#heap[currentIdex];
+
+        while(currentIdex > 0) {
+            let parentIdx = Math.floor((currentIdex-1)/2);
+            let parentValue = this.#heap[parentIdx];
+
+            if (currentValue <= parentValue) break; // do nothing as the-order is all good.
+
+            //swap
+            this.#heap[parentIdx] = currentValue;
+            this.#heap[currentIdex] = parentValue;
+            currentIdex = parentIdx;
+
+        }
+
+    }
     remove(){ // Remove the top node
         if(this.#heap.length === 0) {
             return null;
@@ -56,15 +76,15 @@ class Heap {
 }
 const myHeap = new Heap();
 
-myHeap.insert(99);
-myHeap.insert(72);
-myHeap.insert(61);
-myHeap.insert(58);
+myHeap.insertBubbleUp(99);
+myHeap.insertBubbleUp(72);
+myHeap.insertBubbleUp(61);
+myHeap.insertBubbleUp(58);
 
 console.log(myHeap.getHeap());
 
-myHeap.insert(100);
+myHeap.insertBubbleUp(100);
 console.log(myHeap.getHeap());
 
-myHeap.insert(75);
+myHeap.insertBubbleUp(75);
 console.log(myHeap.getHeap());
