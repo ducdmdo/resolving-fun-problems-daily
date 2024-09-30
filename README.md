@@ -60,6 +60,10 @@
 
 ### Non-linear Data Structure
 #### 4. Binary Heaps
+##### WHY
+      - Binary heaps is used to implement priority queues which is a common data structure.
+      - Binary heaps is used quite a lot with graph traversal
+      
 #### 5. Trees
       Big O
       A full, perfect and complete BST is actually a 'Divide and Conquer' approach
