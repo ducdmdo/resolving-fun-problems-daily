@@ -63,6 +63,10 @@
 ##### WHY
       - Binary heaps is used to implement priority queues which is a common data structure.
       - Binary heaps is used quite a lot with graph traversal
+##### Big O
+      - Insertion & Deletion: Olog(N)
+      - Searching: O(N)
+
       
 #### 5. Trees
       Big O
