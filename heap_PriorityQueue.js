@@ -58,7 +58,49 @@ class PriorityQueue {
         }
         return min;
     }
+
     sinkDown(){
+        let index = 0;
+        let length = this.values.length;
+
+        while(true) {
+            let element = this.values[index];
+            let swapIndex = null;
+
+            let leftChildIndex = index * 2 +1;
+            let leftChild = this.values[leftChildIndex];
+
+            let rightChildIndex = index * 2 + 2;
+            let rightChild = this.values[rightChildIndex];
+
+            if (leftChildIndex < length) {
+                if(leftChild.priority < element.priority) {
+                    swapIndex = leftChildIndex;
+                }
+            }
+
+           
+            if (rightChildIndex < length) {
+                if (
+                    (swapIndex === null && rightChild.priority < element.priority) 
+                    || 
+                    (swapIndex !== null && rightChild.priority < leftChild.priority ) 
+                ){
+                    swapIndex = rightChildIndex;
+    
+                }
+            }
+            
+            if (swapIndex === null) break;
+            this.values[index] = this.values[swapIndex];
+            this.values[swapIndex] = element;
+            index = swapIndex;
+
+        }
+    }
+
+    /**
+     * sinkDown(){
         let idx = 0;
         const length = this.values.length;
         const element = this.values[0];
@@ -89,6 +131,9 @@ class PriorityQueue {
             idx = swap;
         }
     }
+     * 
+     */
+    
 
 }
 
