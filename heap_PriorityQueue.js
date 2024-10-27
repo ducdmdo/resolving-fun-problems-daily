@@ -18,10 +18,10 @@ class PriorityQueue {
 
         //bubbleUp
         this.bubbleUp();
-        
+
     }
     bubbleUp(){
-         
+
         if (this.values.length === 1) {
             console.log('only one item');
             return true;
@@ -43,7 +43,7 @@ class PriorityQueue {
             //update currentNodeIndex after moving up
             currentNodeIndex = parentNodeIndex;
         }
-        
+
     }
 
     dequeue() {
@@ -79,18 +79,18 @@ class PriorityQueue {
                 }
             }
 
-           
+
             if (rightChildIndex < length) {
                 if (
-                    (swapIndex === null && rightChild.priority < element.priority) 
-                    || 
-                    (swapIndex !== null && rightChild.priority < leftChild.priority ) 
+                    (swapIndex === null && rightChild.priority < element.priority)
+                    ||
+                    (swapIndex !== null && rightChild.priority < leftChild.priority )
                 ){
                     swapIndex = rightChildIndex;
-    
+
                 }
             }
-            
+
             if (swapIndex === null) break;
             this.values[index] = this.values[swapIndex];
             this.values[swapIndex] = element;
@@ -119,7 +119,7 @@ class PriorityQueue {
             if(rightChildIdx < length){
                 rightChild = this.values[rightChildIdx];
                 if(
-                    (swap === null && rightChild.priority < element.priority) || 
+                    (swap === null && rightChild.priority < element.priority) ||
                     (swap !== null && rightChild.priority < leftChild.priority)
                 ) {
                    swap = rightChildIdx;
@@ -131,9 +131,9 @@ class PriorityQueue {
             idx = swap;
         }
     }
-     * 
+     *
      */
-    
+
 
 }
 
