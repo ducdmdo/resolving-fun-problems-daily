@@ -17,9 +17,14 @@
 ## Non-Primitive
  ### Linear Data Structure
  #### 1. Array (Fix size)
-      - array.push(i) (adding one or more items to the end of the array) is costing O(1)
-      - array.pop(i) (removing the last item from the tail) is costing O(1)
-      - but array.shift(i) (remove the first item and return it) OR array.unshift(i) is costing O (N) (adding new items as the very first items of the array) because you have to reindex the array
+      - Costing O(1)
+          - array.push(i) (adding one or more items to the end of the array) is costing O(1)
+          - array.pop(i) (removing the last item from the tail) is costing O(1)
+      
+      - Costing O(N) - because you have to reindex the array
+          - array.shift(i) (remove the first item and return it)
+          - array.unshift(i) is costing O (N) (adding new items as the very first items of the array)
+      
 #### 2. Linked List
 ##### Single LinkedList
           **Big O**
