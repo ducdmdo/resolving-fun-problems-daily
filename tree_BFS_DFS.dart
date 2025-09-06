@@ -1,13 +1,11 @@
 import 'dart:collection';
-import 'dart:io';
-import 'dart:js_interop';
 
 class TreeNode {
   int value;
   TreeNode? left;
   TreeNode? right;
 
-  TreeNode(this.value);
+  TreeNode(this.value, {this.left, this.right});
 
   List<int> bfs(TreeNode? root) {
     if (root == null) return [];
@@ -116,4 +114,17 @@ List<int> dfsPostOrder(TreeNode? root) {
   _traverse(root);
 
   return result;
+}
+
+void main() {
+  final TreeNode root = TreeNode(
+    1,
+    left: TreeNode(2, left: TreeNode(4), right: TreeNode(5)),
+    right: TreeNode(3, right: TreeNode(6)),
+  );
+
+  //Perform DFS (Post-order)
+  final List<int> dfsPostOrderResult = dfsPostOrder(root);
+
+  print('DFS Traversal Post Order: $dfsPostOrderResult');
 }
