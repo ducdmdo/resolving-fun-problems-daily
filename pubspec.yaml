@@ -1,0 +1,8 @@
+name: resolving_fun_problems_daily
+description: A Dart project to solve fun problems daily.
+
+environment:
+  sdk: '^3.7.0'
+
+dependencies:
+  collection: ^1.17.0
